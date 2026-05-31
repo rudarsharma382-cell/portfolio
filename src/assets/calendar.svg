@@ -1,0 +1,565 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 828 115" width="100%" height="115">
+  <style>
+    .day { fill: #161b22; shape-rendering: crispEdges; }
+    .day-1 { fill: #0e4429; }
+    .day-2 { fill: #006d32; }
+    .day-3 { fill: #26a641; }
+    .day-4 { fill: #39d353; }
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+  </style>
+
+  <g transform="translate(15, 20)">
+    <!-- Months Labels -->
+    <text x="0" y="-8" class="text">Jun</text>
+    <text x="60" y="-8" class="text">Jul</text>
+    <text x="120" y="-8" class="text">Aug</text>
+    <text x="180" y="-8" class="text">Sep</text>
+    <text x="255" y="-8" class="text">Oct</text>
+    <text x="315" y="-8" class="text">Nov</text>
+    <text x="375" y="-8" class="text">Dec</text>
+    <text x="435" y="-8" class="text">Jan</text>
+    <text x="510" y="-8" class="text">Feb</text>
+    <text x="570" y="-8" class="text">Mar</text>
+    <text x="630" y="-8" class="text">Apr</text>
+    <text x="695" y="-8" class="text">May</text>
+
+    <!-- Days Labels -->
+    <text x="-12" y="18" class="text">Mon</text>
+    <text x="-12" y="44" class="text">Wed</text>
+    <text x="-12" y="70" class="text">Fri</text>
+
+    <!-- Week Columns (53 weeks * 7 days = 371 days) -->
+    <!-- We will generate a loop or layout representing the grid with green spots distributed -->
+    
+    <!-- Week 0 -->
+    <g transform="translate(0, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 1 -->
+    <g transform="translate(15, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-1" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day day-2" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 2 -->
+    <g transform="translate(30, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day day-1" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 3 -->
+    <g transform="translate(45, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-3" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day day-1" />
+    </g>
+    <!-- Week 4 -->
+    <g transform="translate(60, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day day-1" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 5 -->
+    <g transform="translate(75, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-2" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 6 -->
+    <g transform="translate(90, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day day-1" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 7 -->
+    <g transform="translate(105, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-1" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 8 -->
+    <g transform="translate(120, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day day-3" />
+    </g>
+    <!-- Week 9 -->
+    <g transform="translate(135, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-1" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 10 -->
+    <g transform="translate(150, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-4" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 11 -->
+    <g transform="translate(165, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day day-2" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 12 -->
+    <g transform="translate(180, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 13 -->
+    <g transform="translate(195, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-1" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 14 -->
+    <g transform="translate(210, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day day-1" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 15 -->
+    <g transform="translate(225, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-2" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 16 -->
+    <g transform="translate(240, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day day-1" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 17 -->
+    <g transform="translate(255, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 18 -->
+    <g transform="translate(270, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-3" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 19 -->
+    <g transform="translate(285, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day day-2" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 20 -->
+    <g transform="translate(300, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-1" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 21 -->
+    <g transform="translate(315, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-1" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 22 -->
+    <g transform="translate(330, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day day-3" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 23 -->
+    <g transform="translate(345, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day day-1" />
+    </g>
+    <!-- Week 24 -->
+    <g transform="translate(360, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-2" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 25 -->
+    <g transform="translate(375, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-1" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day day-3" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 26 -->
+    <g transform="translate(390, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 27 -->
+    <g transform="translate(405, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-1" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day day-2" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 28 -->
+    <g transform="translate(420, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day day-1" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day day-3" />
+    </g>
+    <!-- Week 29 -->
+    <g transform="translate(435, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-1" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 30 -->
+    <g transform="translate(450, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-3" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 31 -->
+    <g transform="translate(465, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day day-2" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 32 -->
+    <g transform="translate(480, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day day-1" />
+    </g>
+    <!-- Week 33 -->
+    <g transform="translate(495, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-2" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 34 -->
+    <g transform="translate(510, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 35 -->
+    <g transform="translate(525, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-3" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 36 -->
+    <g transform="translate(540, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 37 -->
+    <g transform="translate(555, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-1" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 38 -->
+    <g transform="translate(570, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 39 -->
+    <g transform="translate(585, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 40 -->
+    <g transform="translate(600, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-2" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day day-1" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 41 -->
+    <g transform="translate(615, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day day-1" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 42 -->
+    <g transform="translate(630, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 43 -->
+    <g transform="translate(645, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day day-3" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 44 -->
+    <g transform="translate(660, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day" />
+    </g>
+    <!-- Week 45 -->
+    <g transform="translate(675, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-2" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 46 -->
+    <g transform="translate(690, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 47 -->
+    <g transform="translate(705, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day day-1" />
+      <rect width="10" height="10" x="0" y="13" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 48 -->
+    <g transform="translate(720, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 49 -->
+    <g transform="translate(735, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 50 -->
+    <g transform="translate(750, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="13" class="day day-1" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day animate-pulse" />
+    </g>
+    <!-- Week 51 -->
+    <g transform="translate(765, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day" />
+      <rect width="10" height="10" x="0" y="26" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="39" class="day day-2" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day" />
+      <rect width="10" height="10" x="0" y="78" class="day day-1" />
+    </g>
+    <!-- Week 52 -->
+    <g transform="translate(780, 0)">
+      <rect width="10" height="10" x="0" y="0" class="day" />
+      <rect width="10" height="10" x="0" y="13" class="day day-1" />
+      <rect width="10" height="10" x="0" y="26" class="day" />
+      <rect width="10" height="10" x="0" y="39" class="day" />
+      <rect width="10" height="10" x="0" y="52" class="day" />
+      <rect width="10" height="10" x="0" y="65" class="day animate-pulse" />
+      <rect width="10" height="10" x="0" y="78" class="day day-3" />
+    </g>
+  </g>
+</svg>

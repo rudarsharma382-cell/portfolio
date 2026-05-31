@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Portfolio | CEO of Hoollow{% endblock %}</title>
-    <link rel="icon" type="image/png" href="https://iili.io/By0XZnR.md.png">
+    <title>{% block title %}Portfolio | Rudar Sharma{% endblock %}</title>
+    <link rel="icon" type="image/png" href="/src/assets/hero-avatar.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
         
@@ -47,15 +48,78 @@
         .nav-link { 
             position: relative; font-size: 0.75rem; letter-spacing: 0.2em; 
             text-transform: uppercase; font-weight: 700; 
+            transition: all 0.3s ease-in-out;
         }
-        .nav-link:hover { color: var(--plum); }
+        .nav-link:hover { 
+            color: var(--plum); 
+        }
+        /* Underline fade-in effect */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1.5px;
+            bottom: -6px;
+            left: 0;
+            background-color: var(--plum);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Smooth lift and glow transition for glass cards and buttons */
+        .glass-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px -10px rgba(221, 160, 221, 0.15), 0 0 25px 0 rgba(221, 160, 221, 0.1);
+            border-color: rgba(221, 160, 221, 0.3);
+        }
+
+        .glass-pill {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(221, 160, 221, 0.3);
+        }
+
+        /* Elegant fade-in slide up animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* 3D transformation utility helpers */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .group-hover\:rotate-y-180:hover, .group:hover .group-hover\:rotate-y-180 { transform: rotateY(180deg); }
+
+
     </style>
 </head>
 <body>
 
     <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-[100] glass-header rounded-full transition-all duration-300">
         <div class="px-6 py-3.5 md:px-8 flex justify-between items-center">
-            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter z-[110]">leuwenhoek<span class="text-plum italic">.</span></a>
+            <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter z-[110]">CodeAlchemist<span class="text-plum italic">_</span></a>
             
             <!-- Desktop Navigation Links (Visible on desktop) -->
             <div class="hidden md:flex space-x-10">
@@ -64,7 +128,7 @@
                 <a href="/stats" class="nav-link">Stats</a>
                 <a href="/achievements" class="nav-link">Milestones</a>
                 <a href="/gallery" class="nav-link">Gallery</a>
-                <a href="https://linkify-nine-kappa.vercel.app/" target="_blank" class="nav-link">Connect</a>
+                <a href="/connect" class="nav-link">Connect</a>
             </div>
             
             <!-- Desktop Support Work Button -->
@@ -128,7 +192,7 @@
                 <i class="fas fa-chevron-right text-white/20 group-hover:text-plum group-hover:translate-x-1 transition-all text-sm"></i>
             </a>
 
-            <a href="https://linkify-nine-kappa.vercel.app/" target="_blank" class="group flex items-center justify-between w-full px-6 py-4 rounded-[1.25rem] glass-card border-white/5 hover:border-plum/30 transition-all duration-300 hover:scale-[1.03] hover:bg-white/[0.02]">
+            <a href="/connect" class="group flex items-center justify-between w-full px-6 py-4 rounded-[1.25rem] glass-card border-white/5 hover:border-plum/30 transition-all duration-300 hover:scale-[1.03] hover:bg-white/[0.02]">
                 <div class="flex items-center gap-4">
                     <span class="text-[10px] font-mono font-bold text-plum/60 tracking-wider">06 /</span>
                     <span class="text-base font-bold uppercase tracking-[0.15em] text-white/70 group-hover:text-plum transition-colors">Connect</span>
@@ -145,7 +209,7 @@
     <main>{% block content %}{% endblock %}</main>
 
     <footer class="py-20 px-10 border-t border-white/5 text-center">
-        <p class="text-white/20 text-[10px] uppercase tracking-[0.4em]">© 2026 Founder of Hoollow</p>
+        <p class="text-white/20 text-[10px] uppercase tracking-[0.4em]">© 2026 Rudar Sharma</p>
     </footer>
 
     <script>

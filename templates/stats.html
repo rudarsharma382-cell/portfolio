@@ -21,19 +21,74 @@
                 <div class="flex justify-between items-start mb-12">
                     <div>
                         <h3 class="text-3xl font-bold text-white italic tracking-tight">GitHub Ecosystem</h3>
-                        <p class="text-[10px] text-plum/50 uppercase tracking-[0.3em] font-bold mt-2">leuwenhoek // development_cycle</p>
+                        <p class="text-[10px] text-plum/50 uppercase tracking-[0.3em] font-bold mt-2">rudarsharma382-cell // TRACKING_ACTIVE</p>
                     </div>
                     <i class="fab fa-github text-4xl text-plum/30"></i>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-8 mb-16">
-                    <img src="https://github-readme-stats.shion.dev/api?username=leuwenhoek&show_icons=true&bg_color=00000000&title_color=DDA0DD&text_color=ffffff&icon_color=DDA0DD&hide_border=true" class="w-full filter drop-shadow-2xl">
-                    <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=leuwenhoek&layout=compact&bg_color=00000000&title_color=DDA0DD&text_color=ffffff&hide_border=true" class="w-full filter drop-shadow-2xl">
+                <div class="grid lg:grid-cols-2 gap-12 mb-12">
+                    <!-- Left: Language Distribution (Horizontal Progress Layout) -->
+                    <!-- Left: Language Distribution (Horizontal Progress Layout) -->
+                    <div class="p-2">
+                        <p class="text-[10px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-6">Language Distribution</p>
+                        <div class="space-y-6">
+                            <!-- Python -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                                    <span class="text-white/60">Python</span>
+                                    <span class="text-plum font-bold">45.0%</span>
+                                </div>
+                                <div class="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-plum h-full rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <!-- HTML5 & CSS3 -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                                    <span class="text-white/60">HTML5 & CSS3</span>
+                                    <span class="text-plum font-bold">35.0%</span>
+                                </div>
+                                <div class="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-purple-500 h-full rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <!-- JavaScript -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1.5 font-mono">
+                                    <span class="text-white/60">JavaScript</span>
+                                    <span class="text-plum font-bold">20.0%</span>
+                                </div>
+                                <div class="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-indigo-500 h-full rounded-full" style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Developer Metrics Cards -->
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Commits Card -->
+                        <div class="glass-card p-6 md:p-8 rounded-3xl border-plum/10 relative overflow-hidden flex flex-col justify-center">
+                            <p class="text-[10px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-2">Contribution Output</p>
+                            <h4 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-2 font-mono">59 <span class="text-plum font-serif italic text-2xl md:text-3xl font-light">Commits</span></h4>
+                            <p class="text-xs text-white/40">83 Contributions in the last year</p>
+                            <i class="fas fa-code-branch absolute bottom-4 right-4 text-6xl text-white/[0.01]"></i>
+                        </div>
+                        
+                        <!-- Certifications Card -->
+                        <div class="glass-card p-6 md:p-8 rounded-3xl border-plum/10 relative overflow-hidden flex flex-col justify-center">
+                            <p class="text-[10px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-2">Qualifications</p>
+                            <h4 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-2 font-mono">20+ <span class="text-plum font-serif italic text-2xl md:text-3xl font-light">Certifications</span></h4>
+                            <p class="text-xs text-white/40">Sleek verification from Google, Microsoft, IBM, Cisco, Coursera, and Simplilearn.</p>
+                            <i class="fas fa-certificate absolute bottom-4 right-4 text-6xl text-white/[0.01]"></i>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="glass-card rounded-3xl p-8 bg-[#0a0a0a] border-white/5">
-                    <div class="flex justify-center overflow-x-auto pb-4 custom-scrollbar">
-                        <img src="https://ghchart.rshah.org/DDA0DD/leuwenhoek" alt="leuwenhoek Github Chart" class="min-w-[800px] lg:min-w-0 w-full dark-gh-chart">
+                <div class="w-full flex flex-col items-center justify-center">
+                    <p class="text-[10px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-4">Contribution Calendar</p>
+                    <div class="w-full my-6 flex justify-center">
+                        <img src="/src/assets/calendar.png" alt="Rudar Sharma's GitHub Contribution Grid" class="w-full h-auto object-contain rounded-xl opacity-90 hover:opacity-100 transition-opacity duration-300">
                     </div>
                 </div>
             </div>
@@ -45,47 +100,230 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Column 1: Active Toolkit -->
                     <div class="glass-card p-6 rounded-3xl border-white/5 hover:border-plum/20 transition-all group">
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-plum mb-6">Frontend Engine</p>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-plum mb-6">Active Toolkit</p>
                         <div class="flex flex-wrap gap-6 text-2xl text-white/40">
-                            <i class="fab fa-react group-hover:text-white transition-colors" title="React"></i>
-                            <i class="fab fa-js group-hover:text-white transition-colors" title="JavaScript"></i>
                             <i class="fab fa-html5 group-hover:text-white transition-colors" title="HTML5"></i>
-                            <i class="fab fa-css3-alt group-hover:text-white transition-colors" title="Tailwind"></i>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-6 rounded-3xl border-white/5 hover:border-plum/20 transition-all group">
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-plum mb-6">System & Logic</p>
-                        <div class="flex flex-wrap gap-6 text-2xl text-white/40">
+                            <i class="fab fa-css3-alt group-hover:text-white transition-colors" title="CSS3"></i>
+                            <i class="fab fa-js group-hover:text-white transition-colors" title="JavaScript"></i>
                             <i class="fab fa-python group-hover:text-white transition-colors" title="Python"></i>
-                            <i class="devicon-cplusplus-plain group-hover:text-white transition-colors" title="C++"></i>
-                            <i class="fab fa-node-js group-hover:text-white transition-colors" title="Node.js"></i>
-                            <i class="fas fa-server group-hover:text-white transition-colors" title="Flask"></i>
-                            <i class="fas fa-database group-hover:text-white transition-colors" title="SQL"></i>
                         </div>
                     </div>
 
+                    <!-- Column 2: In-Flight Learning -->
                     <div class="glass-card p-6 rounded-3xl border-white/5 hover:border-plum/20 transition-all group">
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-plum mb-6">Infrastructure</p>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-plum mb-6">In-Flight Learning</p>
                         <div class="flex flex-wrap gap-6 text-2xl text-white/40">
-                            <i class="fab fa-aws group-hover:text-white transition-colors" title="AWS"></i>
+                            <i class="devicon-flutter-plain group-hover:text-white transition-colors" title="Flutter"></i>
+                            <i class="devicon-dart-plain group-hover:text-white transition-colors" title="Dart"></i>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Developer Tools -->
+                    <div class="glass-card p-6 rounded-3xl border-white/5 hover:border-plum/20 transition-all group">
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-plum mb-6">Developer Tools</p>
+                        <div class="flex flex-wrap gap-6 text-2xl text-white/40">
                             <i class="fab fa-git-alt group-hover:text-white transition-colors" title="Git"></i>
-                            <i class="fab fa-linux group-hover:text-white transition-colors" title="Linux"></i>
+                            <i class="fab fa-github group-hover:text-white transition-colors" title="GitHub"></i>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-card rounded-[2.5rem] p-8 md:p-12 border-white/5">
-                <div class="flex justify-between items-start mb-12">
-                    <h3 class="text-3xl font-bold text-white italic tracking-tight">LeetCode Analytics</h3>
-                    <i class="fas fa-terminal text-3xl text-plum/30"></i>
+            <!-- Swiper CSS inside templates/stats.html -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+            <style>
+              /* Custom styles for Swiper navigation buttons matching our theme */
+              .swiper-button-next, .swiper-button-prev {
+                background: rgba(5, 5, 5, 0.6);
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                border: 1px solid rgba(221, 160, 221, 0.2);
+                backdrop-filter: blur(8px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+              }
+              .swiper-button-next:hover, .swiper-button-prev:hover {
+                border-color: rgba(221, 160, 221, 0.5);
+                box-shadow: 0 0 15px rgba(221, 160, 221, 0.25);
+              }
+            </style>
+
+            <div class="glass-card rounded-[2.5rem] p-8 md:p-12 border-white/5 relative overflow-hidden">
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white italic tracking-tight">Verified Credentials // Technical Domain Expertise</h3>
+                        <p class="text-[10px] text-plum/50 uppercase tracking-[0.3em] font-bold mt-2">TECHNICAL CERTIFICATIONS STACK // 8 VERIFIED ROOTS</p>
+                    </div>
+                    <i class="fas fa-certificate text-3xl text-plum/30"></i>
                 </div>
-                <div class="flex justify-center">
-                    <img src="https://leetcard.jacoblin.cool/leuwenhoek?theme=dark&font=Outfit&ext=activity&t={{ timestamp }}" class="w-full max-w-2xl rounded-2xl shadow-2xl">
-                </div>
+                
+                <!-- Swiper Carousel Slider Block -->
+                <div class="w-full relative px-4 md:px-14 py-4 select-none group">
+  
+  <div class="swiper certificateCarousel overflow-hidden rounded-2xl">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-google-ai.jpg" alt="Google AI Essentials" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">COURSERA // GOOGLE</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Google AI Essentials</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Core fundamentals of utilizing generative AI tools and prompt optimizations.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-google-prompting.jpg" alt="Google Prompting Essentials" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">COURSERA // GOOGLE</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Google Prompting Essentials</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Advanced framework methodologies for structured prompting and workflow automation.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-ibm-web.jpg" alt="Web Development Fundamentals" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">CREDLY // IBM</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Web Development Fundamentals</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Architecture frameworks, core cloud services logic, and application deployment strategies.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-ibm-cyber.jpg" alt="Cybersecurity Fundamentals" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">CREDLY // IBM</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Cybersecurity Fundamentals</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Network security structures, system threat logic mechanisms, and digital cryptography.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-ms-ai.jpg" alt="Microsoft GenAI Solutions" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">MICROSOFT LIFELONG</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Generative AI Solutions</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Enterprise system deployments incorporating Azure OpenAI service integration frameworks.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-simplilearn-ai.jpg" alt="Introduction to AI" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">SIMPLILEARN // SKILLUP</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Introduction to AI</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Foundational algorithms analysis, machine learning trends, and smart systems architecture.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-guvi-hcl.jpg" alt="Google AI Studio Deployments" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">GUVI // HCL PARTNER</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">AI Studio Deployments</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Prototyping software apps and engineering API keys directly with Google AI Studio models.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-zinc-900 bg-[#060607] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+        <div class="w-full aspect-[4/3] bg-zinc-950 border-b border-zinc-900 overflow-hidden relative">
+          <img src="/src/assets/cert-cisco-python.jpg" alt="Cisco Python Essentials 1" class="w-full h-full object-contain p-2" />
+        </div>
+        <div class="p-5 flex-grow flex flex-col justify-between min-h-[140px] font-mono">
+          <div>
+            <span class="text-[9px] text-purple-400 font-bold bg-purple-950/20 px-2 py-0.5 rounded border border-purple-900/30">CISCO NETACAD</span>
+            <h4 class="text-base font-bold text-white mt-2 tracking-tight line-clamp-1">Python Essentials 1</h4>
+          </div>
+          <p class="text-zinc-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Advanced runtime loops, data collections processing, and syntax conditioning patterns.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-full rounded-2xl border border-dashed border-zinc-800 bg-[#040405] flex flex-col overflow-hidden transition-all duration-300 hover:border-purple-500/40 group/card">
+        <a href="https://www.linkedin.com/in/rudarsharma-dev" target="_blank" rel="noopener noreferrer" class="w-full h-full flex flex-col items-center justify-center p-8 flex-grow min-h-[340px] text-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-purple-950/30 border border-purple-900/50 flex items-center justify-center text-purple-400 group-hover/card:scale-110 group-hover/card:border-purple-500/40 transition-all duration-300 shadow-md">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </div>
+          <div class="font-mono">
+            <h4 class="text-lg font-bold text-white tracking-tight group-hover/card:text-purple-300 transition-colors">10+ More Certificates</h4>
+            <p class="text-zinc-500 text-xs mt-2 leading-relaxed max-w-[220px] mx-auto">Explore my complete stack of engineering, security, and cloud architectures credentials verified on LinkedIn.</p>
+          </div>
+          <span class="mt-2 text-[11px] font-mono font-bold tracking-wider text-purple-400 uppercase flex items-center gap-1.5 group-hover/card:text-purple-300 transition-colors">
+            View All Records 
+            <svg class="w-3.5 h-3.5 transform group-hover/card:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-xl bg-[#09090b] border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-purple-400 hover:border-purple-500/30 transition-all duration-200 shadow-md">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+  </button>
+  <button class="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-xl bg-[#09090b] border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-purple-400 hover:border-purple-500/30 transition-all duration-200 shadow-md">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+                <!-- Subtext Instruction -->
+                <p class="text-center text-[10px] font-mono tracking-widest text-zinc-600 mt-2 uppercase">← Drag or Swipe to navigate // Use custom arrows on edges for manual control →</p>
             </div>
+
+            <!-- Swiper JS CDN -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+              new Swiper('.certificateCarousel', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                loop: true, // Forces infinite duplicate cycle looping
+                speed: 800,
+                autoplay: {
+                  delay: 3000,
+                  disableOnInteraction: false,
+                },
+                navigation: {
+                  nextEl: '.custom-next',
+                  prevEl: '.custom-prev',
+                },
+                breakpoints: {
+                  680: { slidesPerView: 2 },
+                  1100: { slidesPerView: 3 }
+                }
+              });
+            </script>
 
         </div>
     </section>
@@ -97,6 +335,9 @@
     .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(221, 160, 221, 0.2); border-radius: 10px; }
     .dark-gh-chart {
         filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2);
+    }
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
     }
 </style>
 {% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Connect | Rudar Sharma{% endblock %}
+
+{% block content %}
+<style>
+    /* Override background to solid obsidian black */
+    html, body, main {
+        background-color: #000000 !important;
+    }
+    
+    .menu-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+    }
+    
+    .menu-arrow {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        color: #DA70D6; /* Orchid */
+    }
+    
+    .menu-item:hover .menu-arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
+
+<!-- Connect Section Wrapper -->
+<div class="w-full max-w-2xl mx-auto flex flex-col items-center pt-32 pb-20 px-4 select-none animate-fade-in-up" style="animation-delay: 100ms;">
+  
+  <!-- 1. CIRCULAR AVATAR CONTAINER -->
+  <div class="relative w-28 h-28 rounded-full p-[2px] bg-gradient-to-b from-purple-500/30 to-zinc-800/20 shadow-[0_0_25px_rgba(168,85,247,0.15)] mb-6 overflow-hidden">
+    <!-- Inner Crop Wrapper using our updated image -->
+    <div class="w-full h-full rounded-full overflow-hidden relative bg-zinc-950">
+      <img 
+        src="/src/assets/hero-avatar.png" 
+        alt="CodeAlchemist Avatar" 
+        class="w-full h-full object-cover object-center scale-105" 
+      />
+    </div>
+  </div>
+
+  <!-- Meta Header -->
+  <h1 class="text-4xl font-extrabold tracking-tight text-white mb-1">Rudar <span class="text-purple-400">Sharma.</span></h1>
+  <p class="text-xs font-mono text-purple-400 tracking-widest uppercase mb-12">@CODEALCHEMIST_ // DEVELOPER</p>
+
+  <!-- Horizontal Divider Line -->
+  <div class="w-full h-[1px] bg-zinc-900 mb-2"></div>
+
+  <!-- 2. INTERACTIVE LINKS STACK -->
+  <div class="w-full flex flex-col font-mono">
+    
+    <!-- DIRECT EMAIL -->
+    <a href="mailto:rudarsharma382@gmail.com" class="flex items-center justify-between py-5 border-b border-zinc-900 group transition-all duration-300 hover:px-2">
+      <div class="flex items-center gap-4">
+        <!-- Mail Icon -->
+        <svg class="w-5 h-5 text-zinc-500 group-hover:text-purple-400 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span class="text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">DIRECT EMAIL</span>
+      </div>
+      <span class="text-xs text-zinc-600 group-hover:text-purple-400 transition-colors duration-300">rudarsharma382@gmail.com</span>
+    </a>
+
+    <!-- GITHUB ENGINE -->
+    <a href="https://github.com/rudarsharma382-cell" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-5 border-b border-zinc-900 group transition-all duration-300 hover:px-2">
+      <div class="flex items-center gap-4">
+        <!-- GitHub Icon -->
+        <svg class="w-5 h-5 text-zinc-500 group-hover:text-purple-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        <span class="text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">GITHUB ENGINE</span>
+      </div>
+      <span class="text-xs text-zinc-600 group-hover:text-purple-400 transition-colors duration-300">github.com/rudarsharma382-cell</span>
+    </a>
+
+    <!-- LINKEDIN NETWORK -->
+    <a href="https://www.linkedin.com/in/rudarsharma-dev" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-5 border-b border-zinc-900 group transition-all duration-300 hover:px-2">
+      <div class="flex items-center gap-4">
+        <!-- LinkedIn Icon -->
+        <svg class="w-5 h-5 text-zinc-500 group-hover:text-purple-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <span class="text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">LINKEDIN NETWORK</span>
+      </div>
+      <span class="text-xs text-zinc-600 group-hover:text-purple-400 transition-colors duration-300">in/rudarsharma-dev</span>
+    </a>
+
+    <!-- YOUTUBE JOURNEY -->
+    <a href="https://www.youtube.com/channel/UC7KnebFJ3O2C-_0IdC7ZDFQ" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-5 border-b border-zinc-900 group transition-all duration-300 hover:px-2">
+      <div class="flex items-center gap-4">
+        <!-- YouTube Icon -->
+        <svg class="w-5 h-5 text-zinc-500 group-hover:text-purple-400 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        <span class="text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">YOUTUBE JOURNEY</span>
+      </div>
+      <span class="text-xs text-zinc-600 group-hover:text-purple-400 transition-colors duration-300">@CodeAlchemist_</span>
+    </a>
+
+    <!-- RETURN HOME -->
+    <a href="/" class="flex items-center justify-between py-5 group transition-all duration-300 hover:px-2">
+      <div class="flex items-center gap-4">
+        <!-- Arrow Back Icon -->
+        <svg class="w-5 h-5 text-zinc-500 group-hover:text-purple-400 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        <span class="text-base font-bold text-zinc-300 group-hover:text-white transition-colors duration-300">RETURN HOME</span>
+      </div>
+      <span class="text-xs text-zinc-600 group-hover:text-purple-400 transition-colors duration-300">back to index</span>
+    </a>
+
+  </div>
+</div>
+{% endblock %}

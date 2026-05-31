@@ -3,13 +3,13 @@ import json
 import time
 import threading
 import urllib.request
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
 def clear_leetcode_cache():
     try:
-        req = urllib.request.Request("https://leetcard.jacoblin.cool/us/leuwenhoek", method="DELETE")
+        req = urllib.request.Request("https://leetcard.jacoblin.cool/us/rudarsharma382-cell", method="DELETE")
         with urllib.request.urlopen(req, timeout=5) as response:
             response.read()
     except Exception:
@@ -48,9 +48,17 @@ def gallery():
 def contact():
     return render_template('contact.html')
 
+@app.route('/connect')
+def connect():
+    return render_template('connect.html')
+
 @app.route('/coffee')
 def coffee():
     return "Comming soon"
+
+@app.route('/src/assets/<path:filename>')
+def serve_assets(filename):
+    return send_from_directory(os.path.join(app.root_path, 'src', 'assets'), filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
