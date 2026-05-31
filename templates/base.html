@@ -112,6 +112,91 @@
         .rotate-y-180 { transform: rotateY(180deg); }
         .group-hover\:rotate-y-180:hover, .group:hover .group-hover\:rotate-y-180 { transform: rotateY(180deg); }
 
+        /* ==========================================
+           CUSTOM ACCENT SCROLLBAR SYSTEM
+           ========================================== */
+
+        /* Modern Standard CSS (Firefox) */
+        * {
+          scrollbar-width: thin;
+          scrollbar-color: #a855f7 #09090b; /* Orchid Purple Thumb // Deep Zinc Track */
+        }
+
+        /* WebKit Browsers (Chrome, Safari, Edge, Opera) */
+        ::-webkit-scrollbar {
+          width: 10px;  /* Vertical scrollbar width */
+          height: 10px; /* Horizontal scrollbar height */
+        }
+
+        /* The background track of the scrollbar */
+        ::-webkit-scrollbar-track {
+          background: #09090b;
+          border-left: 1px solid #18181b; /* Subtle separator line */
+        }
+
+        /* The moving draggable handle */
+        ::-webkit-scrollbar-thumb {
+          background: #27272a; /* Starts as a subtle dark zinc */
+          border-radius: 9999px;
+          border: 2px solid #09090b; /* Creates a clean padding effect around the thumb */
+          transition: background-color 0.2s ease;
+        }
+
+        /* Hover interaction state */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #a855f7; /* Glows into vibrant orchid purple on hover */
+        }
+
+        /* Active click/drag state */
+        ::-webkit-scrollbar-thumb:active {
+          background: #c084fc; /* Lightens slightly to bright purple when dragging */
+        }
+
+        /* ==========================================
+           CUSTOM DUAL-CIRCLE ORCHID CURSOR
+           ========================================== */
+        html, body, a, button, input, select, textarea, [role="button"], .swiper-slide, label {
+          cursor: none !important;
+        }
+
+        #cursor-dot {
+          position: fixed;
+          top: 0; left: 0;
+          width: 8px; height: 8px;
+          background: #a855f7;
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 99999;
+          transform: translate(-50%, -50%);
+          transition: opacity 0.2s ease;
+          box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
+        }
+
+        #cursor-ring {
+          position: fixed;
+          top: 0; left: 0;
+          width: 32px; height: 32px;
+          border: 1.5px solid rgba(168, 85, 247, 0.45);
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 99998;
+          transform: translate(-50%, -50%);
+          transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease,
+                      background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+          /* The ring position uses a CSS transition for the lag effect */
+          left: 0; top: 0;
+        }
+
+        #cursor-ring.hovered {
+          width: 48px; height: 48px;
+          border-color: rgba(168, 85, 247, 0.85);
+          background: rgba(168, 85, 247, 0.07);
+          box-shadow: 0 0 18px rgba(168, 85, 247, 0.25);
+        }
+
+        #cursor-dot.hidden-cursor, #cursor-ring.hidden-cursor {
+          opacity: 0;
+        }
 
     </style>
 </head>
@@ -127,7 +212,6 @@
                 <a href="/projects" class="nav-link">Projects</a>
                 <a href="/stats" class="nav-link">Stats</a>
                 <a href="/achievements" class="nav-link">Milestones</a>
-                <a href="/gallery" class="nav-link">Gallery</a>
                 <a href="/connect" class="nav-link">Connect</a>
             </div>
             
@@ -184,17 +268,9 @@
                 <i class="fas fa-chevron-right text-white/20 group-hover:text-plum group-hover:translate-x-1 transition-all text-sm"></i>
             </a>
 
-            <a href="/gallery" class="group flex items-center justify-between w-full px-6 py-4 rounded-[1.25rem] glass-card border-white/5 hover:border-plum/30 transition-all duration-300 hover:scale-[1.03] hover:bg-white/[0.02]">
-                <div class="flex items-center gap-4">
-                    <span class="text-[10px] font-mono font-bold text-plum/60 tracking-wider">05 /</span>
-                    <span class="text-base font-bold uppercase tracking-[0.15em] text-white/70 group-hover:text-plum transition-colors">Gallery</span>
-                </div>
-                <i class="fas fa-chevron-right text-white/20 group-hover:text-plum group-hover:translate-x-1 transition-all text-sm"></i>
-            </a>
-
             <a href="/connect" class="group flex items-center justify-between w-full px-6 py-4 rounded-[1.25rem] glass-card border-white/5 hover:border-plum/30 transition-all duration-300 hover:scale-[1.03] hover:bg-white/[0.02]">
                 <div class="flex items-center gap-4">
-                    <span class="text-[10px] font-mono font-bold text-plum/60 tracking-wider">06 /</span>
+                    <span class="text-[10px] font-mono font-bold text-plum/60 tracking-wider">05 /</span>
                     <span class="text-base font-bold uppercase tracking-[0.15em] text-white/70 group-hover:text-plum transition-colors">Connect</span>
                 </div>
                 <i class="fas fa-chevron-right text-white/20 group-hover:text-plum group-hover:translate-x-1 transition-all text-sm"></i>
@@ -205,6 +281,10 @@
             </a>
         </div>
     </div>
+
+    <!-- Custom Dual-Circle Orchid Cursor DOM Elements -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
 
     <main>{% block content %}{% endblock %}</main>
 
@@ -265,6 +345,70 @@
                 }, 2000);
             });
         }
+    </script>
+
+    <!-- ========================================
+         CUSTOM CURSOR SCRIPT
+         ======================================== -->
+    <script>
+      (function () {
+        const dot  = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+
+        // Ring position — updated with a slight JS lag via rAF lerp
+        let mouseX = 0, mouseY = 0;
+        let ringX  = 0, ringY  = 0;
+        const LERP = 0.12; // lower = more lag (0–1)
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function animateRing() {
+          ringX = lerp(ringX, mouseX, LERP);
+          ringY = lerp(ringY, mouseY, LERP);
+          ring.style.left = ringX + 'px';
+          ring.style.top  = ringY + 'px';
+          requestAnimationFrame(animateRing);
+        }
+        requestAnimationFrame(animateRing);
+
+        // Track mouse — dot moves instantly
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.left = e.clientX + 'px';
+          dot.style.top  = e.clientY + 'px';
+          dot.classList.remove('hidden-cursor');
+          ring.classList.remove('hidden-cursor');
+        });
+
+        // Hide when mouse leaves viewport
+        document.addEventListener('mouseleave', () => {
+          dot.classList.add('hidden-cursor');
+          ring.classList.add('hidden-cursor');
+        });
+        document.addEventListener('mouseenter', () => {
+          dot.classList.remove('hidden-cursor');
+          ring.classList.remove('hidden-cursor');
+        });
+
+        // Hover scaling on interactive elements
+        const SELECTORS = 'a, button, input, select, textarea, [role="button"], label, .custom-prev, .custom-next, .swiper-slide';
+
+        function bindHovers() {
+          document.querySelectorAll(SELECTORS).forEach((el) => {
+            if (el.dataset.cursorBound) return;
+            el.dataset.cursorBound = '1';
+            el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+          });
+        }
+
+        bindHovers();
+
+        // Watch for dynamic DOM nodes (e.g. Swiper duplicates)
+        const observer = new MutationObserver(bindHovers);
+        observer.observe(document.body, { childList: true, subtree: true });
+      })();
     </script>
 </body>
 </html>
