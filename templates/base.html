@@ -462,45 +462,101 @@
     <audio id="bg-audio" loop src="/static/audio/song.mp3"></audio>
 
     <script>
-        // Audio Control Logic
+        // Audio Control Logic with Persistence across Page Navigations
         document.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('bg-audio');
             const toggleBtn = document.getElementById('audio-toggle-btn');
             const audioIcon = document.getElementById('audio-icon');
             const statusText = document.getElementById('audio-status-text');
             
-            if (audio && toggleBtn && audioIcon && statusText) {
-                // Hover status indicator
-                toggleBtn.addEventListener('mouseenter', () => {
-                    statusText.textContent = audio.paused ? 'Play Music' : 'Mute Music';
-                    statusText.classList.remove('opacity-0');
-                    statusText.classList.add('opacity-100');
-                });
-                
-                toggleBtn.addEventListener('mouseleave', () => {
-                    statusText.classList.remove('opacity-100');
-                    statusText.classList.add('opacity-0');
-                });
+            if (!audio || !toggleBtn || !audioIcon || !statusText) return;
 
-                toggleBtn.addEventListener('click', () => {
-                    if (audio.paused) {
+            // Retrieve audio state and elapsed time from localStorage
+            const savedTime = localStorage.getItem('bg-audio-time');
+            const isPlaying = localStorage.getItem('bg-audio-playing') === 'true';
+
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            function setPlayingUI() {
+                audioIcon.className = 'fas fa-volume-up text-sm animate-pulse';
+                statusText.textContent = 'Mute Music';
+                toggleBtn.classList.add('border-plum', 'bg-plum/20');
+                toggleBtn.style.boxShadow = '0 0 20px rgba(221, 160, 221, 0.4)';
+            }
+
+            function setPausedUI() {
+                audioIcon.className = 'fas fa-volume-mute text-sm';
+                statusText.textContent = 'Play Music';
+                toggleBtn.classList.remove('border-plum', 'bg-plum/20');
+                toggleBtn.style.boxShadow = '';
+            }
+
+            // Save audio timestamp continuously
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem('bg-audio-time', audio.currentTime);
+            });
+
+            function tryPlay() {
+                audio.play().then(() => {
+                    setPlayingUI();
+                    localStorage.setItem('bg-audio-playing', 'true');
+                }).catch(err => {
+                    console.log('Autoplay blocked. Registering interaction listeners.');
+                    // If autoplay is blocked by browser, resume on first user interaction
+                    const resumeAudio = () => {
                         audio.play().then(() => {
-                            audioIcon.className = 'fas fa-volume-up text-sm animate-pulse';
-                            statusText.textContent = 'Mute Music';
-                            toggleBtn.classList.add('border-plum', 'bg-plum/20');
-                            toggleBtn.style.boxShadow = '0 0 20px rgba(221, 160, 221, 0.4)';
-                        }).catch(err => {
-                            console.error('Audio playback failed:', err);
-                        });
-                    } else {
-                        audio.pause();
-                        audioIcon.className = 'fas fa-volume-mute text-sm';
-                        statusText.textContent = 'Play Music';
-                        toggleBtn.classList.remove('border-plum', 'bg-plum/20');
-                        toggleBtn.style.boxShadow = '';
-                    }
+                            setPlayingUI();
+                            localStorage.setItem('bg-audio-playing', 'true');
+                            document.removeEventListener('click', resumeAudio);
+                            document.removeEventListener('keydown', resumeAudio);
+                        }).catch(e => console.error(e));
+                    };
+                    document.addEventListener('click', resumeAudio);
+                    document.addEventListener('keydown', resumeAudio);
                 });
             }
+
+            // Resume playback if it was active on the last page
+            if (isPlaying) {
+                tryPlay();
+            } else {
+                setPausedUI();
+            }
+
+            // Hover status indicator
+            toggleBtn.addEventListener('mouseenter', () => {
+                statusText.textContent = audio.paused ? 'Play Music' : 'Mute Music';
+                statusText.classList.remove('opacity-0');
+                statusText.classList.add('opacity-100');
+            });
+            
+            toggleBtn.addEventListener('mouseleave', () => {
+                statusText.classList.remove('opacity-100');
+                statusText.classList.add('opacity-0');
+            });
+
+            // Click toggle button
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent triggering document interaction resume event
+                if (audio.paused) {
+                    audio.play().then(() => {
+                        setPlayingUI();
+                        localStorage.setItem('bg-audio-playing', 'true');
+                    }).catch(err => console.error(err));
+                } else {
+                    audio.pause();
+                    setPausedUI();
+                    localStorage.setItem('bg-audio-playing', 'false');
+                }
+            });
+
+            // Double security: store latest progress right before page unloads
+            window.addEventListener('beforeunload', () => {
+                localStorage.setItem('bg-audio-time', audio.currentTime);
+                localStorage.setItem('bg-audio-playing', !audio.paused);
+            });
         });
     </script>
 </body>
