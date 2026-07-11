@@ -451,5 +451,57 @@
         observer.observe(document.body, { childList: true, subtree: true });
       })();
     </script>
+
+    <!-- Audio Player Toggle UI -->
+    <div class="fixed bottom-6 right-6 z-[100] flex items-center gap-3">
+        <span id="audio-status-text" class="text-[9px] font-mono tracking-widest text-white/40 uppercase bg-[#09090b]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-zinc-800 opacity-0 transition-opacity duration-300 pointer-events-none select-none">Play Music</span>
+        <button id="audio-toggle-btn" class="w-12 h-12 rounded-full glass-pill flex items-center justify-center text-plum hover:text-white border border-plum/30 hover:border-plum/60 bg-plum/5 hover:bg-plum/10 transition-all duration-300 shadow-[0_0_15px_rgba(221,160,221,0.15)] focus:outline-none" aria-label="Toggle Background Music">
+            <i id="audio-icon" class="fas fa-volume-mute text-sm"></i>
+        </button>
+    </div>
+    <audio id="bg-audio" loop src="/static/audio/song.mp3"></audio>
+
+    <script>
+        // Audio Control Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bg-audio');
+            const toggleBtn = document.getElementById('audio-toggle-btn');
+            const audioIcon = document.getElementById('audio-icon');
+            const statusText = document.getElementById('audio-status-text');
+            
+            if (audio && toggleBtn && audioIcon && statusText) {
+                // Hover status indicator
+                toggleBtn.addEventListener('mouseenter', () => {
+                    statusText.textContent = audio.paused ? 'Play Music' : 'Mute Music';
+                    statusText.classList.remove('opacity-0');
+                    statusText.classList.add('opacity-100');
+                });
+                
+                toggleBtn.addEventListener('mouseleave', () => {
+                    statusText.classList.remove('opacity-100');
+                    statusText.classList.add('opacity-0');
+                });
+
+                toggleBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        audio.play().then(() => {
+                            audioIcon.className = 'fas fa-volume-up text-sm animate-pulse';
+                            statusText.textContent = 'Mute Music';
+                            toggleBtn.classList.add('border-plum', 'bg-plum/20');
+                            toggleBtn.style.boxShadow = '0 0 20px rgba(221, 160, 221, 0.4)';
+                        }).catch(err => {
+                            console.error('Audio playback failed:', err);
+                        });
+                    } else {
+                        audio.pause();
+                        audioIcon.className = 'fas fa-volume-mute text-sm';
+                        statusText.textContent = 'Play Music';
+                        toggleBtn.classList.remove('border-plum', 'bg-plum/20');
+                        toggleBtn.style.boxShadow = '';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
