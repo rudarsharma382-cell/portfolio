@@ -86,13 +86,160 @@
                     </div>
                 </div>
 
-                <div class="w-full flex flex-col items-center justify-center">
-                    <p class="text-[10px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-4">Contribution Calendar</p>
-                    <div class="w-full my-6 flex justify-center">
-                        <img src="/src/assets/calendar.png" alt="Rudar Sharma's GitHub Contribution Grid" class="w-full h-auto object-contain rounded-xl opacity-90 hover:opacity-100 transition-opacity duration-300">
+                <!-- Dynamic GitHub Activity Section -->
+                <div class="w-full flex flex-col items-center justify-center mt-12 pt-12 border-t border-white/5">
+                    <p class="text-[10px] text-plum/50 uppercase tracking-[0.3em] font-bold mb-2">GitHub Activity</p>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2 italic text-center">Building consistently, one commit at a time.</h3>
+                    
+                    <!-- React GitHub Calendar Container -->
+                    <div class="w-full my-8 flex justify-center items-center overflow-x-auto scrollbar-none py-4 px-2">
+                        <div id="react-github-calendar" class="w-full max-w-full flex justify-center items-center">
+                            <!-- Spinner/Loading Indicator -->
+                            <div class="flex items-center gap-3 text-white/40 font-mono text-xs">
+                                <i class="fas fa-circle-notch animate-spin text-plum"></i>
+                                <span>Loading GitHub Activity...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic GitHub Stats Row -->
+                    <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <!-- Card 1: Total Contributions -->
+                        <div class="glass-card p-6 rounded-2xl border-white/5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:border-plum/20 hover:bg-white/[0.02] relative overflow-hidden group">
+                            <p class="text-[9px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-2">Total Contributions</p>
+                            <h4 id="github-total-contributions" class="text-3xl font-black text-white font-mono">-</h4>
+                            <i class="fas fa-keyboard absolute -bottom-4 -right-4 text-5xl text-white/[0.01] transition-transform duration-300 group-hover:scale-110"></i>
+                        </div>
+
+                        <!-- Card 2: Public Repos -->
+                        <div class="glass-card p-6 rounded-2xl border-white/5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:border-plum/20 hover:bg-white/[0.02] relative overflow-hidden group">
+                            <p class="text-[9px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-2">Public Repositories</p>
+                            <h4 id="github-public-repos" class="text-3xl font-black text-white font-mono">-</h4>
+                            <i class="fas fa-folder-open absolute -bottom-4 -right-4 text-5xl text-white/[0.01] transition-transform duration-300 group-hover:scale-110"></i>
+                        </div>
+
+                        <!-- Card 3: Followers -->
+                        <div class="glass-card p-6 rounded-2xl border-white/5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:border-plum/20 hover:bg-white/[0.02] relative overflow-hidden group">
+                            <p class="text-[9px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-2">Followers</p>
+                            <h4 id="github-followers" class="text-3xl font-black text-white font-mono">-</h4>
+                            <i class="fas fa-users absolute -bottom-4 -right-4 text-5xl text-white/[0.01] transition-transform duration-300 group-hover:scale-110"></i>
+                        </div>
+
+                        <!-- Card 4: Following -->
+                        <div class="glass-card p-6 rounded-2xl border-white/5 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:border-plum/20 hover:bg-white/[0.02] relative overflow-hidden group">
+                            <p class="text-[9px] text-plum/50 uppercase tracking-[0.2em] font-bold mb-2">Following</p>
+                            <h4 id="github-following" class="text-3xl font-black text-white font-mono">-</h4>
+                            <i class="fas fa-user-plus absolute -bottom-4 -right-4 text-5xl text-white/[0.01] transition-transform duration-300 group-hover:scale-110"></i>
+                        </div>
+                    </div>
+
+                    <!-- View GitHub Profile Button -->
+                    <div class="flex justify-center mt-4 mb-8">
+                        <a href="https://github.com/rudarsharma382-cell" target="_blank" rel="noopener noreferrer" 
+                           class="border border-white/20 hover:border-white text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest bg-transparent hover:bg-white hover:text-black transition-all duration-300">
+                            View GitHub Profile
+                        </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Unified React Module Resolution Map -->
+            <script type="importmap">
+              {
+                "imports": {
+                  "react": "https://esm.sh/react@19",
+                  "react-dom": "https://esm.sh/react-dom@19",
+                  "react-dom/client": "https://esm.sh/react-dom@19/client"
+                }
+              }
+            </script>
+
+            <!-- Import React and react-github-calendar -->
+            <script type="module">
+              import React from 'react';
+              import ReactDOM from 'react-dom/client';
+              import { GitHubCalendar } from 'https://esm.sh/react-github-calendar@5';
+
+              const container = document.getElementById('react-github-calendar');
+              if (container) {
+                const root = ReactDOM.createRoot(container);
+                root.render(
+                  React.createElement(GitHubCalendar, {
+                    username: "rudarsharma382-cell",
+                    blockSize: 15,
+                    blockMargin: 5,
+                    colorScheme: "dark",
+                    theme: {
+                      dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+                    }
+                  })
+                );
+              }
+            </script>
+
+            <!-- Script to fetch stats dynamically from GitHub REST API and local observer -->
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                  const username = 'rudarsharma382-cell';
+                  
+                  // Fetch statistics dynamically from GitHub REST API
+                  fetch(`https://api.github.com/users/${username}`)
+                      .then(response => {
+                          if (!response.ok) throw new Error('Failed to load GitHub user info');
+                          return response.json();
+                      })
+                      .then(data => {
+                          document.getElementById('github-public-repos').textContent = data.public_repos ?? 0;
+                          document.getElementById('github-followers').textContent = data.followers ?? 0;
+                          document.getElementById('github-following').textContent = data.following ?? 0;
+                      })
+                      .catch(err => {
+                          console.error('Error fetching GitHub user info:', err);
+                          document.getElementById('github-public-repos').textContent = 'Error';
+                          document.getElementById('github-followers').textContent = 'Error';
+                          document.getElementById('github-following').textContent = 'Error';
+                      });
+
+                  // Mutation observer to scrape actual contributions count from react-github-calendar component output
+                  const calendarContainer = document.getElementById('react-github-calendar');
+                  if (calendarContainer) {
+                      const obs = new MutationObserver(() => {
+                          const textElements = calendarContainer.querySelectorAll('h2, text, span, p');
+                          for (let el of textElements) {
+                              const txt = el.textContent.trim();
+                              if (txt.toLowerCase().includes('contributions')) {
+                                  const matches = txt.replace(/,/g, '').match(/\d+/);
+                                  if (matches && matches[0]) {
+                                      document.getElementById('github-total-contributions').textContent = matches[0];
+                                      obs.disconnect();
+                                      return;
+                                  }
+                              }
+                          }
+                      });
+                      obs.observe(calendarContainer, { childList: true, subtree: true });
+
+                      // Backup contribution fetch fallback (if observer doesn't find element or parser fails in 5s)
+                      setTimeout(() => {
+                          const totalConts = document.getElementById('github-total-contributions');
+                          if (totalConts && totalConts.textContent === '-') {
+                              fetch(`https://github-contributions-api.deno.dev/${username}.json`)
+                                  .then(res => res.json())
+                                  .then(data => {
+                                      if (data && data.total) {
+                                          totalConts.textContent = data.total.lastYear || data.total.all || '200+';
+                                      } else {
+                                          totalConts.textContent = '200+';
+                                      }
+                                  })
+                                  .catch(() => {
+                                      totalConts.textContent = '200+';
+                                  });
+                          }
+                      }, 5000);
+                  }
+              });
+            </script>
 
             <div class="glass-card rounded-[2.5rem] p-8 md:p-12 border-white/5">
                 <div class="mb-12">
