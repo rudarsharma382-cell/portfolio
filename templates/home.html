@@ -1,6 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Container for React Intro Loader -->
+<div id="intro-loader-root"></div>
+
+<!-- React Module Resolution Map -->
+<script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@19",
+      "react-dom": "https://esm.sh/react-dom@19",
+      "react-dom/client": "https://esm.sh/react-dom@19/client"
+    }
+  }
+</script>
+
+<script type="module">
+  import React from 'react';
+  import ReactDOM from 'react-dom/client';
+  import IntroLoader from '/static/IntroLoader.js';
+
+  // Only run the loader once per browser session, unless forced via query param
+  const urlParams = new URLSearchParams(window.location.search);
+  const forceLoader = urlParams.get('force-loader') === 'true';
+
+  if (forceLoader || !sessionStorage.getItem('intro-loader-seen')) {
+    sessionStorage.setItem('intro-loader-seen', 'true');
+    const container = document.getElementById('intro-loader-root');
+    if (container) {
+      const root = ReactDOM.createRoot(container);
+      root.render(
+        React.createElement(IntroLoader, {
+          onComplete: () => {
+            root.unmount();
+            container.remove();
+          }
+        })
+      );
+    }
+  } else {
+    const container = document.getElementById('intro-loader-root');
+    if (container) {
+      container.remove();
+    }
+  }
+</script>
+
 <style>
     .flip-card {
         perspective: 1500px;
@@ -86,33 +131,7 @@
                     <span class="text-[10px] font-bold uppercase tracking-widest px-4 py-2 border border-white/10 rounded-full text-white/40">Flutter Mobile Dev</span>
                 </div>
 
-                <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                    <div class="flex items-center gap-6 font-mono select-none">
-                  
-                      <span class="text-lg font-extrabold tracking-widest text-white uppercase">
-                        EXPLORE HOOLLOW
-                      </span>
 
-                      <a 
-                        href="https://www.hoollow.com/feed" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="w-14 h-14 rounded-full border border-zinc-800 bg-[#09090b] flex items-center justify-center text-white hover:text-purple-400 hover:border-purple-500/30 hover:scale-105 active:scale-95 transition-all duration-200 group/arrow"
-                        title="Open HOOLLOW Feed"
-                      >
-                        <svg 
-                          class="w-5 h-5 transform group-hover/arrow:translate-x-0.5 transition-transform duration-200" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          stroke-width="2.5" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                        </svg>
-                      </a>
-
-                    </div>
-                </div>
             </div>
 
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">

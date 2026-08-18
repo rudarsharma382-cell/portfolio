@@ -28,19 +28,6 @@ def stats():
     threading.Thread(target=clear_leetcode_cache).start()
     return render_template('stats.html', timestamp=int(time.time()))
 
-@app.route('/api/github-contributions')
-def github_contributions():
-    try:
-        url = "https://github.com/users/rudarsharma382-cell/contributions"
-        req = urllib.request.Request(
-            url,
-            headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-        )
-        with urllib.request.urlopen(req, timeout=8) as response:
-            return response.read().decode('utf-8')
-    except Exception as e:
-        return f"<div class='text-white/40 text-xs font-mono'>Failed to load GitHub activity: {str(e)}</div>", 500
-
 @app.route('/achievements')
 def achievements():
     return render_template('achievements.html')
